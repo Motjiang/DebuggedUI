@@ -9,13 +9,17 @@ import { LoginComponent } from './authorization/login/login.component';
 
 import { HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './authorization/signup/signup.component';
+import { ProfileComponent } from './authorization/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
