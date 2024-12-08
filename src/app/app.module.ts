@@ -12,6 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './authorization/signup/signup.component';
 import { ProfileComponent } from './authorization/profile/profile.component';
 import { InterceptorService } from './authorization/services/interceptor.service';
+import { HeaderComponent } from './components/header/header.component';
+import { ReadCategoryComponent } from './components/category/read-category/read-category.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { InterceptorService } from './authorization/services/interceptor.service
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    ProfileComponent
+    ProfileComponent,
+    HeaderComponent,
+    ReadCategoryComponent
   ],
   imports: [
     BrowserModule,
