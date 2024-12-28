@@ -15,6 +15,7 @@ import { InterceptorService } from './authorization/services/interceptor.service
 import { HeaderComponent } from './components/header/header.component';
 import { ReadCategoryComponent } from './components/category/read-category/read-category.component';
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
+import { UpdateCategoryComponent } from './components/category/update-category/update-category.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AddCategoryComponent } from './components/category/add-category/add-cat
     ProfileComponent,
     HeaderComponent,
     ReadCategoryComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     BrowserModule,

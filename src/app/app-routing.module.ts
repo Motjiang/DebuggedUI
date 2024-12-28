@@ -5,6 +5,7 @@ import { LoginComponent } from './authorization/login/login.component';
 import { SignupComponent } from './authorization/signup/signup.component';
 import { ReadCategoryComponent } from './components/category/read-category/read-category.component';
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
+import { UpdateCategoryComponent } from './components/category/update-category/update-category.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path:'add/category',
     component: AddCategoryComponent
+  },
+  {
+    path:'update/category/:id',
+    component: UpdateCategoryComponent
   },
 ];
 
