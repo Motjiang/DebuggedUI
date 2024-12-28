@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './authorization/login/login.component';
 import { SignupComponent } from './authorization/signup/signup.component';
 import { ReadCategoryComponent } from './components/category/read-category/read-category.component';
+import { AddCategoryComponent } from './components/category/add-category/add-category.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path:'category',
     component: ReadCategoryComponent
+  },
+  {
+    path:'add/category',
+    component: AddCategoryComponent
   },
 ];
 
