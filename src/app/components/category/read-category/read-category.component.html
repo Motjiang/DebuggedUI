@@ -1,18 +1,27 @@
-<table class="table striped">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>mdo</td>
-      </tr>      
-    </tbody>
-  </table>
+<h1 class="mt-3">Category List</h1>
+    <div class="d-flex justify-content-end mt-3">
+        <a [routerLink]="['/admin/categories/add']" class=" btn btn-outline-primary" >Add Category</a>
+    </div>
+
+    <ng-container *ngIf="categories$ | async as categories">
+        <table class="table table-striped mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Identity Number</th>
+                <th scope="col">Category Name</th>
+                <th scope="col">Url Handle</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let category of categories">                
+                <td>{{category.id}}</td>               
+                <td>{{category.name}}</td>               
+                <td>{{category.urlHandle}}</td>   
+                <td>
+                  <a class="btn btn-outline-warning"  [routerLink]="['/admin/categories',category.id]">Update</a>
+                </td>            
+              </tr>             
+            </tbody>
+          </table>
+    </ng-container>
