@@ -12,23 +12,21 @@ import { UpdateCategoryRequest } from '../models/updateCategoryRequest';
 export class CategoryService {
 
   constructor(private http: HttpClient) { }
+  
+  addCategory(model: AddCategoryRequest): Observable<void>{
+    return this.http.post<void>(`${environment.baseUrl}categories`,model);
+  }
 
   getAllCategories():Observable<Category[]> {
     return this.http.get<Category[]>(`${environment.baseUrl}categories`);
   } 
 
-  
-  addCategory(model: AddCategoryRequest): Observable<void>{
-
-    return this.http.post<void>(`${environment.baseUrl}categories`,model);
+  getCategoryById(id:string):Observable<Category>{
+    return this.http.get<Category>(`${environment.baseUrl}categories/${id}`);
   }
 
   updateCategory(id: string, updateCategoryRequest: UpdateCategoryRequest): Observable<Category> {
     return this.http.put<Category>(`${environment.baseUrl}categories/${id}`, updateCategoryRequest);
-  }
-
-  getCategoryById(id:string):Observable<Category>{
-    return this.http.get<Category>(`${environment.baseUrl}categories/${id}`);
   }
 
   deleteCategory(id: string): Observable<Category> {

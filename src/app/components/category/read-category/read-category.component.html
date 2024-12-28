@@ -3,7 +3,8 @@
         <a [routerLink]="['/add/category']" class=" btn btn-outline-primary" >Add Category</a>
     </div>
 
-    <ng-container *ngIf="categories$ | async as categories">
+    <ng-container *ngIf="categories$ | async as categories;else notFound">
+       
         <table class="table table-striped mt-3">
             <thead>
               <tr>
@@ -25,3 +26,9 @@
             </tbody>
           </table>
     </ng-container>
+
+    <ng-template #notFound>
+        <div class="alert alert-warning" role="alert">
+          Category not found!
+        </div>
+      </ng-template>

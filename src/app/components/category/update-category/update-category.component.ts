@@ -52,6 +52,7 @@ export class UpdateCategoryComponent implements OnInit, OnDestroy {
       this.editCategorySubscription = this.categoryService.updateCategory(this.id, updateCategoryRequest)
       .subscribe({
         next: (response) => {
+          
           this.router.navigateByUrl('/category');
         }
       });

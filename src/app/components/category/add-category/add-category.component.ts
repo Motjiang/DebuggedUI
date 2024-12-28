@@ -25,6 +25,7 @@ export class AddCategoryComponent {
   onFormSubmit(){
     this.addCategorySubscription = this.categoryService.addCategory(this.model).subscribe({
       next:(response) => {
+        
         this.router.navigateByUrl('/category');
       }
     });
