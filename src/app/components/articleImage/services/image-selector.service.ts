@@ -21,7 +21,7 @@ export class ImageSelectorService {
   constructor(private http: HttpClient) { }
 
   getAllImages(): Observable<ArticleImage[]> {
-    return this.http.get<ArticleImage[]>(`${environment.baseUrl}images`);
+    return this.http.get<ArticleImage[]>(`${environment.baseUrl}articleImages`);
   }
 
   uploadImage(file: File, fileName: string, title: string): Observable<ArticleImage> {
@@ -30,7 +30,7 @@ export class ImageSelectorService {
     formData.append('fileName', fileName);
     formData.append('title', title);
 
-    return this.http.post<ArticleImage>(`${environment.baseUrl}images`, formData);
+    return this.http.post<ArticleImage>(`${environment.baseUrl}articleImages`, formData);
   }
 
   selectImage(image: ArticleImage): void {
