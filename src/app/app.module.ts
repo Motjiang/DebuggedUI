@@ -17,6 +17,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { ReadCategoryComponent } from './components/category/read-category/read-category.component';
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
 import { UpdateCategoryComponent } from './components/category/update-category/update-category.component';
+import { ReadArticleComponent } from './components/article/read-article/read-article.component';
+import { AddArticleComponent } from './components/article/add-article/add-article.component';
+import { UpdateArticleComponent } from './components/article/update-article/update-article.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { UpdateCategoryComponent } from './components/category/update-category/u
     HeaderComponent,
     ReadCategoryComponent,
     AddCategoryComponent,
-    UpdateCategoryComponent
+    UpdateCategoryComponent,
+    ReadArticleComponent,
+    AddArticleComponent,
+    UpdateArticleComponent
   ],
   imports: [
     BrowserModule,

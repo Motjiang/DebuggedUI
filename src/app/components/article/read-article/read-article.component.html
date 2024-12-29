@@ -1,0 +1,37 @@
+<h1 class="mt-3">Article List</h1>
+
+<div class="d-flex justify-content-end mt-3">
+  <a [routerLink]="['/admin/blogposts/add']" class="btn btn-primary">Add Article</a>
+</div>
+
+
+<ng-container *ngIf="articles$ | async as articles">
+  <table class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Short Description</th>
+        <th>Is Visible?</th>
+        <th>Categories</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let article of articles">
+        <td>{{article.title}}</td>
+        <td>{{article.shortDescription}}</td>
+        <td>{{article.isVisible}}</td>
+        <td>
+          <span *ngFor="let category of article.categories">
+            <span class="badge bg-secondary me-2">{{category.name}}</span>
+          </span>
+        </td>
+        <td>
+          <a class="btn btn-light" [routerLink]="['/admin/blogposts', article.id]">Update</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</ng-container>
