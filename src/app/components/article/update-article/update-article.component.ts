@@ -4,6 +4,9 @@ import { Observable, Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleService } from '../services/article.service';
 import { CategoryService } from '../../category/services/category.service';
+import { ImageSelectorService } from '../../articleImage/services/image-selector.service';
+import { Category } from '../../category/models/category';
+import { UpdateArticleRequest } from '../models/updateArticleRequest';
 
 @Component({
   selector: 'app-update-article',
@@ -14,8 +17,8 @@ export class UpdateArticleComponent implements OnInit, OnDestroy {
 
   id: string | null = null;
   model?: Article;
-  categories$? : Observable<Article[]>;
-  selectedCategories?: string[];
+  categories$? : Observable<Category[]>;
+  selectedCategories?: number[];
   isImageSelectorVisible : boolean = false;
 
 
@@ -30,7 +33,7 @@ export class UpdateArticleComponent implements OnInit, OnDestroy {
     private articleService: ArticleService,
     private categoryService: CategoryService,
     private router:Router,
-    private imageService: ImageService) {
+    private imageSelectorService: ImageSelectorService) {
 
   }
 
@@ -43,9 +46,9 @@ export class UpdateArticleComponent implements OnInit, OnDestroy {
       next: (params) => {
         this.id = params.get('id');
 
-        // Get BlogPost From API
+        // Get artivle From API
         if (this.id) {
-          this.getBlogPostSubscription = this.blogPostService.getBlogPostById(this.id).subscribe({
+          this.getArticleSubscription = this.articleService.getArticleById(this.id).subscribe({
             next: (response) => {
               this.model = response;
               this.selectedCategories = response.categories.map(x => x.id);
@@ -54,7 +57,7 @@ export class UpdateArticleComponent implements OnInit, OnDestroy {
           ;
         }
 
-        this.imageSelectSubscricption = this.imageService.onSelectImage()
+        this.imageSelectSubscricption = this.imageSelectorService.onSelectImage()
         .subscribe({
           next: (response) => {
             if (this.model) {
@@ -70,7 +73,7 @@ export class UpdateArticleComponent implements OnInit, OnDestroy {
   onFormSubmit(): void {
     // Convert this model to Request Object
     if (this.model && this.id) {
-      var updateBlogPost: UpdateBlogPost = {
+      var updateArticle: UpdateArticleRequest = {
         author: this.model.author,
         content: this.model.content,
         shortDescription: this.model.shortDescription,
@@ -82,10 +85,10 @@ export class UpdateArticleComponent implements OnInit, OnDestroy {
         categories: this.selectedCategories ?? []
       };
 
-      this.updateBlogPostSubscription = this.blogPostService.updateBlogPost(this.id, updateBlogPost)
+      this.updateArticleSubscription = this.articleService.updateArticle(this.id, updateArticle)
       .subscribe({
         next: (response) => {
-          this.router.navigateByUrl('/admin/blogposts');
+          this.router.navigateByUrl('/article');
         }
       });
     }
@@ -95,10 +98,10 @@ export class UpdateArticleComponent implements OnInit, OnDestroy {
   onDelete(): void {
     if (this.id) {
       // call service and delete blogpost
-      this.deleteBlogPostSubscription = this.blogPostService.deleteBlogPost(this.id)
+      this.deleteArticleSubscription = this.articleService.deleteArticle(this.id)
       .subscribe({
         next: (response) => {
-          this.router.navigateByUrl('/admin/blogposts');
+          this.router.navigateByUrl('/article');
         }
       });
     }
@@ -114,9 +117,9 @@ export class UpdateArticleComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.routeSubscription?.unsubscribe();
-    this.updateBlogPostSubscription?.unsubscribe();
-    this.getBlogPostSubscription?.unsubscribe();
-    this.deleteBlogPostSubscription?.unsubscribe();
+    this.updateArticleSubscription?.unsubscribe();
+    this.getArticleSubscription?.unsubscribe();
+    this.deleteArticleSubscription?.unsubscribe();
     this.imageSelectSubscricption?.unsubscribe();
   }
 

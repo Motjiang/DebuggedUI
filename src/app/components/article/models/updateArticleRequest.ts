@@ -7,6 +7,6 @@ export interface UpdateArticleRequest {
     author: string;
     publishedDate: Date;
     isVisible: boolean;
-    categories: string[];
+    categories: number[];
   }
   

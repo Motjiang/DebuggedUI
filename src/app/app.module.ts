@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { UpdateCategoryComponent } from './components/category/update-category/u
 import { ReadArticleComponent } from './components/article/read-article/read-article.component';
 import { AddArticleComponent } from './components/article/add-article/add-article.component';
 import { UpdateArticleComponent } from './components/article/update-article/update-article.component';
+import { ImageSelectorComponent } from './components/articleImage/image-selector/image-selector.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import { UpdateArticleComponent } from './components/article/update-article/upda
     UpdateCategoryComponent,
     ReadArticleComponent,
     AddArticleComponent,
-    UpdateArticleComponent
+    UpdateArticleComponent,
+    ImageSelectorComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { UpdateArticleComponent } from './components/article/update-article/upda
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    ToastrModule
+    ToastrModule,
+    MarkdownModule.forRoot()
 
   ],
   providers: [
