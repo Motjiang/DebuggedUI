@@ -24,9 +24,13 @@ export class AddCategoryComponent {
 
   onFormSubmit(){
     this.addCategorySubscription = this.categoryService.addCategory(this.model).subscribe({
-      next:(response) => {
-        
+      next:(response) => {        
         this.router.navigateByUrl('/category');
+      },
+      error: (err) => {
+        console.error('Error adding category:', err); // Log the error
+        // You can display an error message to the user
+        this.router.navigateByUrl('/error404'); // Navigate on success
       }
     });
 

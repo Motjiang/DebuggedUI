@@ -54,10 +54,14 @@ export class AddArticleComponent implements OnInit, OnDestroy {
 
   onFormSubmit(): void {
     console.log(this.model);
-    this.articleService.addArticle(this.model)
-    .subscribe({
+    this.articleService.addArticle(this.model).subscribe({
       next: (response) => {
-        this.router.navigateByUrl('/article');
+        this.router.navigateByUrl('/article'); // Navigate on success
+      },
+      error: (err) => {
+        console.error('Error adding article:', err); // Log the error
+        // You can display an error message to the user
+        this.router.navigateByUrl('/error404'); // Navigate on success
       }
     });
   }
