@@ -12,6 +12,10 @@ export class ArticleService {
 
   constructor(private http: HttpClient) { }
 
+  addArticle(data: Article) : Observable<Article> {
+    return this.http.post<Article>(`${environment.baseUrl}articles`, data);
+  }
+
   getAllArticles() : Observable<Article[]> {
     return this.http.get<Article[]>(`${environment.baseUrl}articles`);
   }
