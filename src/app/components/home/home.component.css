@@ -1,0 +1,5 @@
+.featured-image {
+    width: 100%;        /* Ensure the image width fills the container */
+    height: 100%;       /* Ensure the image height fills the container */
+    object-fit: contain;  /* Prevents stretching or shrinking, while maintaining the aspect ratio */
+  }

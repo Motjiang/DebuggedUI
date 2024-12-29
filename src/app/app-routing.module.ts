@@ -11,6 +11,7 @@ import { UpdateArticleComponent } from './components/article/update-article/upda
 import { AddArticleComponent } from './components/article/add-article/add-article.component';
 import { FullArticleComponent } from './components/full-article/full-article.component';
 import { Page404Component } from './error-pages/page404/page404.component';
+import { TestHomeComponent } from './test-home/test-home.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path:'error404',
     component: Page404Component
+  },
+  {
+    path:'view',
+    component: TestHomeComponent
   },
 ];
 

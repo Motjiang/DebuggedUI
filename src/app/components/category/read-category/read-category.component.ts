@@ -82,4 +82,8 @@ export class ReadCategoryComponent implements OnInit {
       this.pageSize
     );
   }
+
+  onSearch(query: string) {
+    this.categories$ = this.categoryService.getAllCategories(query);
+  }
 }

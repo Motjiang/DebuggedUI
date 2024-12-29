@@ -1,4 +1,4 @@
-<div class="my-5">
+<!-- <div class="my-5">
     <div class="row align-items-strech">
       <ng-container *ngIf="article$ | async as articles">
         <div class="col-12 col-md-4 mb-3" *ngFor="let article of articles">
@@ -22,4 +22,53 @@
         </div>
       </ng-container>
     </div>
-  </div>
+  </div> -->
+
+  <ng-container *ngIf="article$ | async as article">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+      <div class="col-lg-6 px-0">
+        <h1 class="display-4 fst-italic">{{ article[7].title }}</h1>
+        <p class="lead my-3">{{ article[7].shortDescription }}</p> 
+        <p class="lead mb-0">
+          <a [routerLink]="['/full/article', article[7].urlHandle]" class="text-body-emphasis fw-bold">Continue reading...</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary-emphasis"> {{ article[1].title }}</strong>
+            <h3 class="mb-0">Featured post</h3>
+            <div class="mb-1 text-body-secondary"> {{ article[1].publishedDate | date: 'dd MMM yyyy' }}</div>
+            <p class="card-text mb-auto">{{ article[1].shortDescription }}</p>
+            <a [routerLink]="['/full/article', article[1].urlHandle]" class="icon-link gap-1 icon-link-hover stretched-link">
+              Continue reading...           
+            </a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="{{article[1].featuredImageUrl}}" width="210" height="310" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-success-emphasis"> {{ article[2].title }}</strong>
+            <h3 class="mb-0">Post title</h3>
+            <div class="mb-1 text-body-secondary">{{article[2].publishedDate | date: 'dd MMM yyyy'}}</div>
+            <p class="mb-auto">{{ article[2].shortDescription }}</p>
+            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+              Continue reading...
+            </a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img src="{{article[2].featuredImageUrl}}" width="210" height="310" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+  
+  

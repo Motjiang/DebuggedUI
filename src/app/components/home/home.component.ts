@@ -17,4 +17,5 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.article$ = this.articleService.getAllArticles();
   }
+ 
 }

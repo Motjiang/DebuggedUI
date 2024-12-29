@@ -24,6 +24,7 @@ import { UpdateArticleComponent } from './components/article/update-article/upda
 import { ImageSelectorComponent } from './components/articleImage/image-selector/image-selector.component';
 import { FullArticleComponent } from './components/full-article/full-article.component';
 import { Page404Component } from './error-pages/page404/page404.component';
+import { TestHomeComponent } from './test-home/test-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { Page404Component } from './error-pages/page404/page404.component';
     UpdateArticleComponent,
     ImageSelectorComponent,
     FullArticleComponent,
-    Page404Component
+    Page404Component,
+    TestHomeComponent
   ],
   imports: [
     BrowserModule,
