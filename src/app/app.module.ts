@@ -22,6 +22,7 @@ import { ReadArticleComponent } from './components/article/read-article/read-art
 import { AddArticleComponent } from './components/article/add-article/add-article.component';
 import { UpdateArticleComponent } from './components/article/update-article/update-article.component';
 import { ImageSelectorComponent } from './components/articleImage/image-selector/image-selector.component';
+import { FullArticleComponent } from './components/full-article/full-article.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import { ImageSelectorComponent } from './components/articleImage/image-selector
     ReadArticleComponent,
     AddArticleComponent,
     UpdateArticleComponent,
-    ImageSelectorComponent
+    ImageSelectorComponent,
+    FullArticleComponent
   ],
   imports: [
     BrowserModule,

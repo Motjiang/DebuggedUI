@@ -9,6 +9,7 @@ import { UpdateCategoryComponent } from './components/category/update-category/u
 import { ReadArticleComponent } from './components/article/read-article/read-article.component';
 import { UpdateArticleComponent } from './components/article/update-article/update-article.component';
 import { AddArticleComponent } from './components/article/add-article/add-article.component';
+import { FullArticleComponent } from './components/full-article/full-article.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path:'home',
     component: HomeComponent
+  },
+  {
+    path:'full/article/:urlHandle',
+    component: FullArticleComponent
   },
   {
     path:'article',

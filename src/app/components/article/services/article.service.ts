@@ -23,6 +23,10 @@ export class ArticleService {
   getArticleById(id: string): Observable<Article> {
     return this.http.get<Article>(`${environment.baseUrl}articles/search/${id}`);
   }
+
+  getArticleByUrlHandle(urlHandle: string): Observable<Article> {
+    return this.http.get<Article>(`${environment.baseUrl}articles/view/${urlHandle}`);
+  }
   
   updateArticle(id: string, updatedArticle: UpdateArticleRequest): Observable<Article> {
     return this.http.put<Article>(`${environment.baseUrl}articles/${id}`, updatedArticle);
