@@ -5,7 +5,7 @@
 </div>
 
 
-<ng-container *ngIf="articles$ | async as articles">
+<ng-container *ngIf="articles$ | async as articles;else notFound">
   <table class="table table-bordered mt-3">
     <thead>
       <tr>
@@ -35,3 +35,9 @@
 
 
 </ng-container>
+
+<ng-template #notFound>
+  <div class="alert alert-warning mt-3" role="alert">
+    Article not found!
+  </div>
+</ng-template>
