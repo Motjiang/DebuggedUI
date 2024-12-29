@@ -20,7 +20,6 @@ import { UpdateCategoryComponent } from './components/category/update-category/u
 import { ReadArticleComponent } from './components/article/read-article/read-article.component';
 import { AddArticleComponent } from './components/article/add-article/add-article.component';
 import { UpdateArticleComponent } from './components/article/update-article/update-article.component';
-
 @NgModule({
   declarations: [
     AppComponent,

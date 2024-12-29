@@ -7,6 +7,7 @@ import { ReadCategoryComponent } from './components/category/read-category/read-
 import { AddCategoryComponent } from './components/category/add-category/add-category.component';
 import { UpdateCategoryComponent } from './components/category/update-category/update-category.component';
 import { ReadArticleComponent } from './components/article/read-article/read-article.component';
+import { UpdateArticleComponent } from './components/article/update-article/update-article.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path:'article',
     component: ReadArticleComponent
+  },
+  {
+    path:'update/article/:id',
+    component: UpdateArticleComponent
   },
   {
     path:'category',
