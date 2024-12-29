@@ -1,1 +1,25 @@
-<p>home works!</p>
+<div class="my-5">
+    <div class="row align-items-strech">
+      <ng-container *ngIf="article$ | async as articles">
+        <div class="col-12 col-md-4 mb-3" *ngFor="let article of articles">
+          <div class="card h-100">
+            <img [src]="article.featuredImageUrl" class="card-img-top"
+            [alt]="article.title">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">
+                {{article.title}}
+              </h5>
+              <p class="card-text">
+                {{article.shortDescription}}
+              </p>
+              <span class="d-flex align-items-end" style="flex: 1">
+              <a [routerLink]="['/full/article', article.urlHandle]" class="btn btn-primary">
+                Read More
+              </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
