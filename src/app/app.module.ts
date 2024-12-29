@@ -23,6 +23,7 @@ import { AddArticleComponent } from './components/article/add-article/add-articl
 import { UpdateArticleComponent } from './components/article/update-article/update-article.component';
 import { ImageSelectorComponent } from './components/articleImage/image-selector/image-selector.component';
 import { FullArticleComponent } from './components/full-article/full-article.component';
+import { Page404Component } from './error-pages/page404/page404.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +40,8 @@ import { FullArticleComponent } from './components/full-article/full-article.com
     AddArticleComponent,
     UpdateArticleComponent,
     ImageSelectorComponent,
-    FullArticleComponent
+    FullArticleComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,

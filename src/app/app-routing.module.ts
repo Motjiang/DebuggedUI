@@ -10,6 +10,7 @@ import { ReadArticleComponent } from './components/article/read-article/read-art
 import { UpdateArticleComponent } from './components/article/update-article/update-article.component';
 import { AddArticleComponent } from './components/article/add-article/add-article.component';
 import { FullArticleComponent } from './components/full-article/full-article.component';
+import { Page404Component } from './error-pages/page404/page404.component';
 
 const routes: Routes = [
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path:'update/category/:id',
     component: UpdateCategoryComponent
+  },
+  {
+    path:'error404',
+    component: Page404Component
   },
 ];
 
