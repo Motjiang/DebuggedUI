@@ -25,6 +25,7 @@ import { ImageSelectorComponent } from './components/articleImage/image-selector
 import { FullArticleComponent } from './components/full-article/full-article.component';
 import { Page404Component } from './error-pages/page404/page404.component';
 import { TestHomeComponent } from './test-home/test-home.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { TestHomeComponent } from './test-home/test-home.component';
     ImageSelectorComponent,
     FullArticleComponent,
     Page404Component,
-    TestHomeComponent
+    TestHomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
