@@ -10,14 +10,12 @@ import { ArticleService } from '../../article/services/article.service';
 })
 export class MainHomeArticleComponent implements OnInit {
 
-  articles$?: Observable<Article[]>;
+  article$?: Observable<Article[]>;
+  constructor(private articleService: ArticleService) {
 
-  constructor(private articleService: ArticleService) {}
-
+  }
   ngOnInit(): void {
-    this.articles$ = this.articleService.getAllArticles().pipe(
-      map(articles => articles.slice(0, 2)) // Take only the first two articles
-    );
+    this.article$ = this.articleService.getAllArticles();
   }
 
 }

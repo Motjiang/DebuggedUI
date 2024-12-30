@@ -26,13 +26,7 @@ import { FullArticleComponent } from './components/full-article/full-article.com
 import { Page404Component } from './error-pages/page404/page404.component';
 import { TestHomeComponent } from './test-home/test-home.component';
 import { FooterComponent } from './footer/footer.component';
-import { FeaturedArticleComponent } from './components/home-components/featured-article/featured-article.component';
-import { SubFeaturedArticleComponent } from './components/home-components/sub-featured-article/sub-featured-article.component';
 import { MainHomeArticleComponent } from './components/home-components/main-home-article/main-home-article.component';
-import { AboutUsComponent } from './components/home-components/about-us/about-us.component';
-import { RecentArticleComponent } from './components/home-components/recent-article/recent-article.component';
-import { ArchivedArticleComponent } from './components/home-components/archived-article/archived-article.component';
-import { BusinessLinkComponent } from './components/home-components/business-link/business-link.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,13 +47,7 @@ import { BusinessLinkComponent } from './components/home-components/business-lin
     Page404Component,
     TestHomeComponent,
     FooterComponent,
-    FeaturedArticleComponent,
-    SubFeaturedArticleComponent,
-    MainHomeArticleComponent,
-    AboutUsComponent,
-    RecentArticleComponent,
-    ArchivedArticleComponent,
-    BusinessLinkComponent
+    MainHomeArticleComponent
   ],
   imports: [
     BrowserModule,
