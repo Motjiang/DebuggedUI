@@ -1,1 +1,20 @@
-<p>sub-featured-article works!</p>
+<ng-container *ngIf="articles$ | async as articles">
+    <div class="row mb-2">
+        <div class="col-md-6" *ngFor="let article of articles">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-295 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary-emphasis">{{ article.title }}</strong>
+                    <h3 class="mb-0">Featured post</h3>
+                    <div class="mb-1 text-body-secondary">{{ article.publishedDate | date: 'dd MMM yyyy' }}</div>
+                    <p class="card-text mb-auto">{{ article.shortDescription }}</p>
+                    <a [routerLink]="['/full/article', article.urlHandle]" class="icon-link gap-1 icon-link-hover stretched-link mb-3">
+                        Continue reading...
+                    </a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img src="{{article.featuredImageUrl}}" width="250" height="360" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
