@@ -34,8 +34,8 @@ export class FeaturedArticleComponent implements OnInit, OnDestroy {
   }
 
   startArticleRotation(): void {
-    // Switch articles every 5 seconds (5000ms)
-    this.intervalSubscription = timer(0, 5000).subscribe(() => {
+    // Switch articles every 1 min 
+    this.intervalSubscription = timer(0, 60000).subscribe(() => {
       this.randomizeArticle();
     });
   }
