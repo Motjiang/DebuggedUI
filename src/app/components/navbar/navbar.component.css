@@ -1,3 +1,27 @@
+/* .active {
+color: rgb(122, 4, 4); text-decoration: underline;
+text-underline-offset: 4px; 
+font-size: 16px; 
+} */
+
+
 .active {
-color: rgb(122, 4, 4);
+    position: relative;
+    color: rgb(122, 4, 4);
+    text-decoration: none; /* Remove the default underline */
+}
+
+.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Thickness of the line */
+    background-color: blue; /* Color of the line */
+    transition: width 0.3s ease 0.2s; /* Duration and delay of the animation */
+}
+
+.active:hover::after {
+    width: 100%; /* Line grows to full width on hover */
 }
