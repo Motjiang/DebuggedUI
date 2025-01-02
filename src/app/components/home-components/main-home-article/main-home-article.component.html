@@ -30,30 +30,37 @@
         <h1 class="display-4 fst-italic">{{ article[7].title }}</h1>
         <p class="lead my-3">{{ article[7].shortDescription }}</p> 
         <p class="lead mb-0">
-          <a [routerLink]="['/full/article', article[7].urlHandle]" class="text-body-emphasis fw-bold">Continue reading...</a>
+          <a [routerLink]="['/full/article', article[7].urlHandle]" class="text-body-emphasis fw-bold">Continue reading... 
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+            </svg>
+          </a>
         </p>
       </div>
     </div>
 
     <div class="row mb-2">
       <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-primary-emphasis"> {{ article[1].title }}</strong>
             <h3 class="mb-0">Featured post</h3>
             <div class="mb-1 text-body-secondary"> {{ article[1].publishedDate | date: 'dd MMM yyyy' }}</div>
-            <p class="card-text mb-auto">{{ article[1].shortDescription }}</p>
+            <p class="card-text mb-3">{{ article[1].shortDescription }}</p>
             <a [routerLink]="['/full/article', article[1].urlHandle]" class="icon-link gap-1 icon-link-hover stretched-link">
-              Continue reading...           
+              Continue reading...   
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+              </svg>        
             </a>
           </div>
           <div class="col-auto d-none d-lg-block">
-            <img src="{{article[1].featuredImageUrl}}" width="210" height="310" alt="">
+            <img src="{{article[1].featuredImageUrl}}" width="210" height="330" alt="">
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-260 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-success-emphasis"> {{ article[2].title }}</strong>
             <h3 class="mb-0">Post title</h3>
@@ -61,10 +68,13 @@
             <p class="mb-auto">{{ article[2].shortDescription }}</p>
             <a [routerLink]="['/full/article', article[2].urlHandle]"  class="icon-link gap-1 icon-link-hover stretched-link">
               Continue reading...
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+              </svg>
             </a>
           </div>
           <div class="col-auto d-none d-lg-block">
-            <img src="{{article[2].featuredImageUrl}}" width="210" height="310" alt="">
+            <img src="{{article[2].featuredImageUrl}}" width="210" height="330" alt="">
           </div>
         </div>
       </div>
