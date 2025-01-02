@@ -88,14 +88,20 @@
   
         <article class="blog-post">
           <h2 class="display-5 link-body-emphasis mb-1">{{ article[4].title }}</h2>
-          <p class="blog-post-meta">{{ article[4].publishedDate | date: 'MMMM dd yyyy' }} by <a href="#">{{ article[4].author }}</a></p>
+          <p class="blog-post-meta">{{ article[4].publishedDate | date: 'MMMM dd yyyy' }} by <a href="#">{{ article[4].author }}  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+          </svg></a></p>
           <p>{{ article[4].shortDescription }}</p>
           <hr>  
           <p><markdown [data]="article[4].content"></markdown></p>
         </article>
         <article class="blog-post">
           <h2 class="display-5 link-body-emphasis mb-1">{{ article[5].title }}</h2>
-          <p class="blog-post-meta">{{ article[5].publishedDate | date: 'MMMM dd yyyy' }} <a href="#">{{ article[5].author }}</a></p>
+          <p class="blog-post-meta">{{ article[5].publishedDate | date: 'MMMM dd yyyy' }} <a href="#">{{ article[5].author }}  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/>
+            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/>
+          </svg></a></p>
           <p>{{ article[5].shortDescription }}</p>
           <hr>  
           <p><markdown [data]="article[5].content"></markdown></p>
@@ -117,7 +123,7 @@
             <h4 class="fst-italic">Recent posts</h4>
             <ul class="list-unstyled">
               <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" [routerLink]="['/full/article', article[5].urlHandle]">
                   <img src="{{article[5].featuredImageUrl}}" width="100" height="100" alt="">
                   <div class="col-lg-8">
                     <h6 class="mb-0">{{ article[5].title }}</h6>
@@ -126,7 +132,7 @@
                 </a>
               </li>
               <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" [routerLink]="['/full/article', article[6].urlHandle]">
                   <img src="{{article[6].featuredImageUrl}}" width="100" height="100" alt="">
                   <div class="col-lg-8">
                     <h6 class="mb-0">{{ article[6].title }}</h6>
@@ -135,7 +141,7 @@
                 </a>
               </li>
               <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" [routerLink]="['/full/article', article[7].urlHandle]">
                   <img src="{{article[7].featuredImageUrl}}" width="100" height="100" alt="">
                   <div class="col-lg-8">
                     <h6 class="mb-0">{{ article[7].title }}</h6>
