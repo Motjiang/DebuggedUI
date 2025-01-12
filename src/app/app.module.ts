@@ -27,6 +27,9 @@ import { Page404Component } from './error-pages/page404/page404.component';
 import { TestHomeComponent } from './test-home/test-home.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainHomeArticleComponent } from './components/home-components/main-home-article/main-home-article.component';
+import { DashboardComponent } from './authorization/dashboard/dashboard.component';
+import { AdministratorComponent } from './authorization/administrator/administrator.component';
+import { WriterComponent } from './authorization/writer/writer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,10 @@ import { MainHomeArticleComponent } from './components/home-components/main-home
     Page404Component,
     TestHomeComponent,
     FooterComponent,
-    MainHomeArticleComponent
+    MainHomeArticleComponent,
+    DashboardComponent,
+    AdministratorComponent,
+    WriterComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,9 @@ import { AddArticleComponent } from './components/article/add-article/add-articl
 import { FullArticleComponent } from './components/full-article/full-article.component';
 import { Page404Component } from './error-pages/page404/page404.component';
 import { TestHomeComponent } from './test-home/test-home.component';
+import { DashboardComponent } from './authorization/dashboard/dashboard.component';
+import { AdministratorComponent } from './authorization/administrator/administrator.component';
+import { WriterComponent } from './authorization/writer/writer.component';
 
 const routes: Routes = [
   {
@@ -26,6 +29,18 @@ const routes: Routes = [
   {
     path:'signup',
     component: SignupComponent
+  },
+  {
+    path:'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path:'administrator-page',
+    component: AdministratorComponent
+  },
+  {
+    path:'writer-page',
+    component: WriterComponent
   },
   {
     path:'home',
