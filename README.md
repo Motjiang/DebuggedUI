@@ -1,27 +1,41 @@
-# DebuggedUI
+# Article Website UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+Welcome to the **Article Website UI**! This frontend application is built with **Angular 16** and designed to complement the Article Website API. The platform focuses on providing a seamless user experience for Tech Developers, offering tools to improve the **Software Development Life Cycle (SDLC)** and share tutorials.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📖 Overview
 
-## Code scaffolding
+This Angular application provides a user-friendly interface for interacting with the Article Website platform. The key features include:  
+- **User Roles**:  
+  - **Administrator**: Approves articles, manages categories, and oversees platform content.  
+  - **Read/Writer**: Writes and reads articles, selects categories, and uploads images.  
+- **Article Moderation**: Ensures only approved articles are published.  
+- **Category Selection**: Writers can choose from administrator-defined categories.  
+- **Image Upload**: Allows writers to attach relevant images to articles.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠️ Technology Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The frontend is built with the following technologies:
+- **Angular 16**
+- **TypeScript**
+- **Bootstrap 5**
+- **HTML5**
+- **CSS3**
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+🛠️ Features
+Dashboard
+- Displays a summary of articles, categories, and user activities.
+Article Management
+- View Articles: Browse all published articles.
+- Write Articles: Create new articles with category selection and image upload.
+- Approval Workflow: Articles require admin approval before going live.
+Category Management
+- Administrators can add, edit, and delete categories to organize content effectively.
+Authentication (Planned)
+- JWT-based authentication to secure user actions and restrict access based on roles.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
