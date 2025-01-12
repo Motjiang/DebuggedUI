@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/authorization/services/auth.service';
 export class HeaderComponent {
 roles="";
   isLoggedIn!:boolean;
-  hide=false;
+  hide!:false;
 
   checkLoggedInUser(){
     this.isLoggedIn= this.authService.isLoggedIn();

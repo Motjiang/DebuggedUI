@@ -7,17 +7,4 @@ import { AuthService } from 'src/app/authorization/services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-
-  roles="";
-  isLoggedIn!:boolean;
-
-  checkLoggedInUser(){
-    this.isLoggedIn= this.authService.isLoggedIn();
-    this.roles=this.authService.getUserRole();
-  }
-  logout(){
-    this.authService.logout();
-  }
-  constructor(private authService:AuthService){
-  }
 }

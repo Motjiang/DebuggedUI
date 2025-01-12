@@ -15,7 +15,7 @@ import { TestHomeComponent } from './test-home/test-home.component';
 import { DashboardComponent } from './authorization/dashboard/dashboard.component';
 import { AdministratorComponent } from './authorization/administrator/administrator.component';
 import { WriterComponent } from './authorization/writer/writer.component';
-import { authGuard } from './authorization/services/auth.guard';
+import { authGuard } from './security/guard.guard';
 const routes: Routes = [
   {
     path:'',
