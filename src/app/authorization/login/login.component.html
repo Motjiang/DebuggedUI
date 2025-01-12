@@ -1,23 +1,28 @@
 
 <div class="d-flex align-items-center justify-content-center">
 	<div class="card p-4 shadow-lg" style="max-width: 400px; width: 100%;">
-		<form>
+		<form [formGroup]="frm" (ngSubmit)="onPost()">
+
 			<h1 class="h3 mb-3 fw-normal text-center">Please login in</h1>
 	
 			<div class="form-floating mb-3">
-				<input type="text" class="form-control" id="floatingInput" name="username" placeholder="name@example.com">
+				<input type="text" class="form-control" name="username" formControlName="username" placeholder="name@example.com">
 				<label for="floatingInput">Username</label>
-				<div class="msg error">
-					Username is required
-				</div>
+				<div class="msg error" *ngIf="f['username'].invalid && (f['username'].dirty || f['username'].touched)">
+					<span *ngIf="f['username'].errors?.['required']">
+						Username is required  
+				  </span>
+				 </div>
 			</div>
 			
 			<div class="form-floating mb-3">
-				<input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+				<input type="password" class="form-control" name="password" formControlName="password" placeholder="Password">
 				<label for="floatingPassword">Password</label>
-				<div class="msg error">
-					Password is required
-				</div>	
+				<div class="msg error" *ngIf="f['password'].invalid && (f['password'].dirty || f['password'].touched)">
+					<span *ngIf="f['password'].errors?.['required']">
+						Password is required  
+				  </span>
+				  </div>	
 			</div>	
 					
 			<button class="btn btn-primary w-100 py-2" type="submit">Log in</button>
