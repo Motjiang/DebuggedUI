@@ -9,12 +9,13 @@
         </ul>
 
         <div class="col-md-3 text-end">
-            <!-- <button type="button" class="btn btn-outline-primary me-2" routerLink="error 404">Login</button> -->
-            <a [routerLink]="['/login']" class="btn btn-outline-primary me-2">Login</a>
-
-            <!-- <button type="button" class="btn btn-primary">Sign-up</button> -->
-            <a [routerLink]="['/signup']" class="btn btn-outline-primary me-2">Sign-up</a>
+            <!-- Show Login and Sign-up when the user is not logged in -->
+            <a [routerLink]="['/login']" [hidden]="!isLoggedIn" class="btn btn-outline-primary me-2">Login</a>
+            <a [routerLink]="['/signup']" [hidden]="!isLoggedIn" class="btn btn-outline-primary me-2">Sign-up</a>
+        
+            <!-- Show Logout when the user is logged in -->
+            <a (click)="logout()" [hidden]="isLoggedIn" class="btn btn-outline-primary me-2" style="cursor:pointer">Logout</a>
         </div>
     </header>
-    <app-navbar></app-navbar>
+   
 </div>

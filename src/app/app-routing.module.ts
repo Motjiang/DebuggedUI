@@ -15,7 +15,7 @@ import { TestHomeComponent } from './test-home/test-home.component';
 import { DashboardComponent } from './authorization/dashboard/dashboard.component';
 import { AdministratorComponent } from './authorization/administrator/administrator.component';
 import { WriterComponent } from './authorization/writer/writer.component';
-
+import { authGuard } from './authorization/services/auth.guard';
 const routes: Routes = [
   {
     path:'',
@@ -32,15 +32,15 @@ const routes: Routes = [
   },
   {
     path:'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,canActivate:[authGuard]
   },
   {
     path:'administrator-page',
-    component: AdministratorComponent
+    component: AdministratorComponent,canActivate:[authGuard]
   },
   {
     path:'writer-page',
-    component: WriterComponent
+    component: WriterComponent,canActivate:[authGuard]
   },
   {
     path:'home',
